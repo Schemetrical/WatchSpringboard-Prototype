@@ -355,6 +355,7 @@
     view.transform = CGAffineTransformIdentity;
     usedScale = zoomScale;
   }
+    usedScale *= 0.8;
   if(self.isDragging == YES || self.isZooming == YES)
     [view setScale:usedScale animated:YES];
   else
@@ -622,6 +623,17 @@
         lineOffset = (_itemDiameter+_itemPadding)/2;
       posX = _contentSizeExtra.width*0.5+_itemPadding+lineOffset+indexInLine*(_itemDiameter+_itemPadding)+_itemDiameter/2,
       posY = _contentSizeExtra.height*0.5+_itemPadding+line*(_itemDiameter)+_itemDiameter/2;
+        
+#ifdef CONDENSED
+        
+        posX *= 0.65;
+        posY *= 0.9;
+        
+#else
+        posX *= 0.74;
+        posY *= 1.13;
+        
+#endif
       view.center = CGPointMake(posX, posY);
 
       i++;

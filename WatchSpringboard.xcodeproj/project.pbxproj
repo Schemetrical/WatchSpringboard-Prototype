@@ -70,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F87FBAF19FFD70100FA3810 /* Defines.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.pch; sourceTree = "<group>"; };
 		A069C6CA19FC5AAD00E7E6D5 /* Icon-34@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-34@2x.png"; sourceTree = "<group>"; };
 		A069C6CC19FEBB7400E7E6D5 /* Icon-0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-0@2x.png"; sourceTree = "<group>"; };
 		A069C6CE19FEDA9B00E7E6D5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -194,6 +195,7 @@
 		A073BBB519F9C7AB0068D6A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5F87FBAF19FFD70100FA3810 /* Defines.pch */,
 				A073BBB619F9C7AB0068D6A6 /* Info.plist */,
 				A073BBB719F9C7AB0068D6A6 /* main.m */,
 			);
@@ -551,6 +553,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WatchSpringBoard/Defines.pch;
 				INFOPLIST_FILE = WatchSpringboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -562,6 +566,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WatchSpringBoard/Defines.pch;
 				INFOPLIST_FILE = WatchSpringboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

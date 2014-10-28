@@ -8,7 +8,7 @@
 
 #import "LMSpringboardItemView.h"
 
-static double const kLMSpringboardItemViewSmallThreshold = 0.75;
+static double const kLMSpringboardItemViewSmallThreshold = 0.55;
 
 @interface LMSpringboardItemView ()
 {
@@ -120,12 +120,13 @@ static double const kLMSpringboardItemViewSmallThreshold = 0.75;
   if(self)
   {
     _scale = 1;
-    
+#ifndef CONDENSED
     _label = [[UILabel alloc] init];
+#endif
     _label.opaque = NO;
     _label.backgroundColor = nil;
     _label.textColor = [UIColor whiteColor];
-    _label.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+    _label.font = [UIFont systemFontOfSize:10];
     [self addSubview:_label];
     
     _icon = [[UIImageView alloc] init];
