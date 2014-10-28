@@ -335,21 +335,19 @@
     }
     else
     {
-      double rawScale = MAX(distanceToBorder/(distanceToBeOffset*2), 0);
-      rawScale = MIN(rawScale, 1);
-      rawScale = 1-pow(1-rawScale, 2);
-      double scale = rawScale*(1-_minimumItemScaling)+_minimumItemScaling;
-
-      xOffset = frame.size.width*0.8*(1-rawScale)*xOffset;
-      yOffset = frame.size.width*0.5*(1-rawScale)*yOffset;
-
-      float translationModifier = MIN(distanceToBorder/_itemDiameter+2.5, 1);
-      
-      scale = MAX(MIN(scale*_transformFactor+(1-_transformFactor), 1), 0);
-      translationModifier = MIN(translationModifier*_transformFactor, 1);
-      view.transform = CGAffineTransformTranslate(CGAffineTransformMakeScale(scale, scale), xOffset*translationModifier, yOffset*translationModifier);
-      
-      usedScale = scale*zoomScale;
+        double rawScale = MAX(distanceToBorder/(distanceToBeOffset*2), 0);
+        rawScale = MIN(rawScale, 1);
+        rawScale = 1-pow(1-rawScale, 2);
+        
+        xOffset = frame.size.width*0.8*(1-rawScale)*xOffset;
+        yOffset = frame.size.width*0.5*(1-rawScale)*yOffset;
+        
+        float translationModifier = MIN(distanceToBorder/_itemDiameter+2.5, 1);
+        
+        translationModifier = MIN(translationModifier*_transformFactor, 1);
+        view.transform = CGAffineTransformTranslate(CGAffineTransformMakeScale(rawScale, rawScale), xOffset*translationModifier, yOffset*translationModifier);
+        
+        usedScale = rawScale*zoomScale;
     }
   }
   else
@@ -450,7 +448,7 @@
 }
 
 #pragma mark UIScrollViewDelegate
-
+/*
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
                      withVelocity:(CGPoint)velocity
               targetContentOffset:(inout CGPoint *)targetContentOffset
@@ -519,7 +517,7 @@
   }
   // we're going to end in. snap to closest icon
   *targetContentOffset = correctedTargetOffset;
-}
+}*/
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {

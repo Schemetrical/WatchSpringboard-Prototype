@@ -161,11 +161,11 @@
     
     [self addSubview:_springboard];
     
-    _appView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"App.png"]];
-    _appView.transform = CGAffineTransformMakeScale(0, 0);
-    _appView.alpha = 0;
-    _appView.backgroundColor = [UIColor whiteColor];
-    [self addSubview:_appView];
+//    _appView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"App.png"]];
+//    _appView.transform = CGAffineTransformMakeScale(0, 0);
+//    _appView.alpha = 0;
+//    _appView.backgroundColor = [UIColor whiteColor];
+//    [self addSubview:_appView];
     
     _appLaunchMaskView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icon.png"]];
     
